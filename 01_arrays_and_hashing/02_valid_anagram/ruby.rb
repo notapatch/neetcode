@@ -1,6 +1,10 @@
 require 'minitest/autorun'
 
-#TODO: Solve anagaram by tallying letters
+# def anagram?(s, t)
+#   return false if s.length != t.length
+#
+#   s.chars.tally == t.chars.tally
+# end
 
 def anagram?(s, t)
   return false if s.length != t.length
