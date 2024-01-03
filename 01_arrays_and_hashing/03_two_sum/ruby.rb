@@ -1,5 +1,6 @@
 require 'minitest/autorun'
 
+# # Hash value to index
 def two_sum(nums, target)
   checked = {}
   nums.each_with_index do |value, index|
@@ -11,6 +12,15 @@ def two_sum(nums, target)
     checked[value] = index
   end
 end
+
+# Brute force
+# def two_sum(nums, target)
+#   nums.each_with_index do |value, index|
+#     complement = target - value
+#     complement_index = nums[index + 1..].index(complement)
+#     return [index, index + complement_index + 1] if complement_index
+#   end
+# end
 
 class TestContainsDuplicate < Minitest::Test
   def test_two_sum_long
