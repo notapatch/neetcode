@@ -7,15 +7,13 @@ def length_of_longest_substring(s)
   result = 0
   while right < s.length
     if unique_chars.include? s[right]
-      # repeated char
       unique_chars.delete s[left]
       left += 1
-    else
-      # unrepeated
-      unique_chars.add(s[right])
-      result = [unique_chars.size, result].max
-      right += 1
     end
+
+    unique_chars.add(s[right])
+    result = [unique_chars.size, result].max
+    right += 1
   end
   result
 end
