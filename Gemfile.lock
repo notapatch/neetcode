@@ -1,0 +1,16 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    minitest (5.20.0)
+    minitest-focus (1.4.0)
+      minitest (>= 4, < 6)
+
+PLATFORMS
+  arm64-darwin-22
+
+DEPENDENCIES
+  minitest
+  minitest-focus
+
+BUNDLED WITH
+   2.4.19
