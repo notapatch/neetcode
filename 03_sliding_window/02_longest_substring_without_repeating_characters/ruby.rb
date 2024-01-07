@@ -5,15 +5,15 @@ def length_of_longest_substring(s)
   left, right = 0, 0
   unique_chars = Set.new
   result = 0
-  while right < s.length
-    if unique_chars.include? s[right]
+
+  (0...s.length).each do |right|
+    while unique_chars.include? s[right]
       unique_chars.delete s[left]
       left += 1
     end
 
     unique_chars.add(s[right])
     result = [unique_chars.size, result].max
-    right += 1
   end
   result
 end
@@ -47,6 +47,12 @@ class TestLongestSubstring < Minitest::Test
     s = "dvdf"
     output = length_of_longest_substring(s)
     assert_equal 3, output
+  end
+
+  def test_example_157
+    s = "qrsvbspk"
+    output = length_of_longest_substring(s)
+    assert_equal 5, output
   end
 end
 
